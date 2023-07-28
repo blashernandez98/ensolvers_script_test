@@ -10,11 +10,20 @@ fi
 
 mysql_root_password="$1"
 
-# Database setup
-database_name="notes"
-
 # Create the database and tables using an external SQL file
 mysql -u root -p"${mysql_root_password}" < start.sql
+
+# Function to stop the backend application
+function stop_backend {
+  local backend_pid=$(lsof -t -i:3000)
+  if [ -n "$backend_pid" ]; then
+    echo "Stopping the backend application (PID: $backend_pid)..."
+    kill "$backend_pid"
+  fi
+}
+
+# Define a trap to call stop_backend function on script exit
+trap stop_backend EXIT
 
 # Start the backend application
 cd backend
@@ -27,6 +36,8 @@ npm run dev &
 cd ../frontend
 npm install &&
 npm run dev
+
+# The trap will automatically call stop_backend function here
 
 # Exit the script
 exit
