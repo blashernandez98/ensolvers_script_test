@@ -1,0 +1,29 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Notes-backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElianaPranzetti/githubblashernandez98-ensolvers-challenge.git"
+  },
+  "author": "Blas Hernández",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElianaPranzetti/githubblashernandez98-ensolvers-challenge/issues"
+  },
+  "homepage": "https://github.com/ElianaPranzetti/githubblashernandez98-ensolvers-challenge#readme",
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prisma": "^5.0.0"
+  }
+}
