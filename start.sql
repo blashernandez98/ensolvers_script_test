@@ -1,4 +1,6 @@
-CREATE DATABASE IF NOT EXISTS notes;
+CREATE DATABASE IF NOT EXISTS ensolvers_test;
+
+USE ensolvers_test;
 
 CREATE TABLE IF NOT EXISTS notes (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,4 +29,3 @@ INSERT INTO tags (tag_name) VALUES ('work'), ('personal'), ('important'), ('urge
 INSERT INTO notes (title, content) VALUES ('My first note', 'This is my first note!'), ('My second note', 'This is my second note!');
 
 INSERT INTO note_tags (note_id, tag_id) VALUES (1, 1), (1, 2), (1, 3), (2, 2), (2, 4);
-```

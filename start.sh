@@ -18,14 +18,14 @@ mysql -u root -p"${mysql_root_password}" < start.sql
 
 # Start the backend application
 cd backend
-npm install
-npx prisma db pull
-npx prisma generate
+npm install &&
+npx prisma db pull &&
+npx prisma generate &&
 npm run dev &
 
 # Start the frontend application
 cd ../frontend
-npm install
+npm install &&
 npm run dev
 
 # Exit the script
